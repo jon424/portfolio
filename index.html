@@ -2,493 +2,534 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- deployed at https://jonjacksonwebdev.netlify.app/ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Spline+Sans+Mono&family=Amatic+SC&family=Exo&family=Permanent+Marker&family=Source+Code+Pro&family=Noto+Sans+JP&family=Rubik+Doodle+Shadow&display=swap"
+      rel="stylesheet" />
+    <title>Jon Jackson - Web Developer</title>
+    <style>
+      /* color palettes: https://coolors.co/palettes/font */
+      :root {
+        --primary-color-one: #f77f00;
+        --secondary-color-one: #003049;
+        --tertiary-color-one: #d62828;
+        --quaternary-color-one: #fcbf49;
+        --quinary-color-one: #eae2b7;
+        --heading-font-one: "Silkscreen", sans-serif;
+        --paragraph-font-one: "Spline Sans Mono", monospace;
 
-<head>
-  <!-- deployed at https://jonjacksonwebdev.netlify.app/ -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Silkscreen&family=Spline+Sans+Mono&family=Amatic+SC&family=Exo&family=Permanent+Marker&family=Source+Code+Pro&family=Noto+Sans+JP&family=Rubik+Doodle+Shadow&display=swap"
-    rel="stylesheet" />
-  <title>Jon Jackson - Web Developer</title>
-  <style>
-    /* color palettes: https://coolors.co/palettes/font */
-    :root {
-      --primary-color-one: #f77f00;
-      --secondary-color-one: #003049;
-      --tertiary-color-one: #d62828;
-      --quaternary-color-one: #fcbf49;
-      --quinary-color-one: #eae2b7;
-      --heading-font-one: "Silkscreen", sans-serif;
-      --paragraph-font-one: "Spline Sans Mono", monospace;
+        --primary-color-two: #f4845f;
+        --secondary-color-two: #f7b267;
+        --tertiary-color-two: #f79d65;
+        --quaternary-color-two: #f27059;
+        --quinary-color-two: #f25c54;
+        --heading-font-two: "Amatic SC", sans-serif;
+        --paragraph-font-two: "Exo", sans-serif;
 
-      --primary-color-two: #f4845f;
-      --secondary-color-two: #f7b267;
-      --tertiary-color-two: #f79d65;
-      --quaternary-color-two: #f27059;
-      --quinary-color-two: #f25c54;
-      --heading-font-two: "Amatic SC", sans-serif;
-      --paragraph-font-two: "Exo", sans-serif;
+        --primary-color-three: #432818;
+        --secondary-color-three: #6f1d1b;
+        --tertiary-color-three: #bb9457;
+        --quaternary-color-three: #99582a;
+        --quinary-color-three: #ffe6a7;
+        --heading-font-three: "Permanent Marker", cursive;
+        --paragraph-font-three: "Source Code Pro", monospace;
 
-      --primary-color-three: #432818;
-      --secondary-color-three: #6f1d1b;
-      --tertiary-color-three: #bb9457;
-      --quaternary-color-three: #99582a;
-      --quinary-color-three: #ffe6a7;
-      --heading-font-three: "Permanent Marker", cursive;
-      --paragraph-font-three: "Source Code Pro", monospace;
+        --primary-color-four: #a3a3a3;
+        --secondary-color-four: #606c38;
+        --tertiary-color-four: #283618;
+        --quaternary-color-four: #dda15e;
+        --quinary-color-four: #bc6c25;
+        --heading-font-four: "Rubik Doodle Shadow";
+        --paragraph-font-four: "Noto Sans JP";
+      }
 
-      --primary-color-four: #a3a3a3;
-      --secondary-color-four: #606c38;
-      --tertiary-color-four: #283618;
-      --quaternary-color-four: #dda15e;
-      --quinary-color-four: #bc6c25;
-      --heading-font-four: "Rubik Doodle Shadow";
-      --paragraph-font-four: "Noto Sans JP";
-    }
+      body {
+        background-color: var(--primary-color-one);
+        margin: 0;
+        font-family: "Arial", sans-serif;
+      }
 
-    body {
-      background-color: var(--primary-color-one);
-      margin: 0;
-      font-family: "Arial", sans-serif;
-    }
+      header,
+      footer {
+        background-color: var(--secondary-color-one);
+        color: var(--tertiary-color-one);
+        text-align: center;
+        padding: 1em 0;
+      }
 
-    header,
-    footer {
-      background-color: var(--secondary-color-one);
-      color: var(--tertiary-color-one);
-      text-align: center;
-      padding: 1em 0;
-    }
+      .btn {
+        border: 1px solid black;
+        display: inline-block;
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        user-select: none;
+        border: 1px solid transparent;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        cursor: pointer;
+      }
 
-    .btn {
-      border: 1px solid black;
-      display: inline-block;
-      font-weight: 400;
-      text-align: center;
-      white-space: nowrap;
-      vertical-align: middle;
-      user-select: none;
-      border: 1px solid transparent;
-      padding: 0.375rem 0.75rem;
-      font-size: 1rem;
-      line-height: 1.5;
-      border-radius: 0.25rem;
-      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-      cursor: pointer;
-    }
+      /* Primary button */
+      .btn-primary {
+        color: #fff;
+        background-color: var(--primary-color-two);
+      }
 
-    /* Primary button */
-    .btn-primary {
-      color: #fff;
-      background-color: var(--primary-color-two);
-    }
+      .thumbnail,
+      .project-pic {
+        max-width: 200px;
+        height: auto;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
 
-    .thumbnail,
-    .project-pic {
-      max-width: 200px;
-      height: auto;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
+      .project-pic {
+        border-radius: 9px;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
 
-    .project-pic {
-      border-radius: 9px;
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
+      .description {
+        margin: auto;
+        max-width: 30rem;
+        text-align: center;
+        line-height: 0.85rem;
+      }
 
-    .description {
-      margin: auto;
-      max-width: 30rem;
-      text-align: center;
-      line-height: 0.85rem;
-    }
+      h1,
+      h2,
+      .btn {
+        font-family: var(--heading-font-one);
+      }
 
-    h1,
-    h2,
-    .btn {
-      font-family: var(--heading-font-one);
-    }
+      h3,
+      p {
+        font-family: var(--paragraph-font-one);
+      }
 
-    h3,
-    p {
-      font-family: var(--paragraph-font-one);
-    }
+      h1,
+      h2,
+      h3,
+      p,
+      a {
+        color: whitesmoke;
+      }
 
-    h1,
-    h2,
-    h3,
-    p,
-    a {
-      color: whitesmoke;
-    }
+      section {
+        padding: 2em;
+      }
 
-    section {
-      padding: 2em;
-    }
+      #projects {
+        background-color: var(--quaternary-color-one);
+      }
 
-    #projects {
-      background-color: var(--quaternary-color-one);
-    }
-
-    .projects-flex-container {
-      display: grid;
-      grid-template-columns: repeat(2, 300px);
-      gap: 5em;
-      justify-content: center;
-    }
-
-    footer a {
-      color: var(--quinary-color-one);
-      text-decoration: none;
-      margin: 0 1em;
-    }
-
-    .project {
-      border: 1px solid var(--quinary-color-one);
-      font-family: var(--paragraph-font-one);
-      padding: 1em;
-      text-align: center;
-      width: 100%;
-      max-width: 300px;
-    }
-
-    .project-img-container {
-      display: flex;
-      justify-content: center;
-    }
-
-    .project h3,
-    .project p {
-      text-align: left;
-    }
-
-    #changeStylesBtn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      z-index: 999;
-    }
-
-    @media only screen and (max-width: 800px) {
       .projects-flex-container {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 2em;
+        grid-template-columns: repeat(2, 300px);
+        gap: 5em;
+        justify-content: center;
+      }
+
+      footer a {
+        color: var(--quinary-color-one);
+        text-decoration: none;
+        margin: 0 1em;
+      }
+
+      .project {
+        border: 1px solid var(--quinary-color-one);
+        font-family: var(--paragraph-font-one);
+        padding: 1em;
+        text-align: center;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .project-img-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .project h3,
+      .project p {
+        text-align: left;
       }
 
       #changeStylesBtn {
-        position: relative;
-        margin-bottom: 16px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 999;
       }
-    }
 
-    #about {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 2em 3em 2em;
-    }
+      @media only screen and (max-width: 800px) {
+        .projects-flex-container {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2em;
+        }
 
-    #about p {
-      line-height: 1.6;
-      margin-bottom: 1.5em;
-    }
-  </style>
-</head>
+        #changeStylesBtn {
+          position: relative;
+          margin-bottom: 16px;
+        }
+      }
 
-<body>
-  <header>
-    <img src="assets\github-profile-pic.jpg" alt="Placeholder Image" class="thumbnail" />
-    <h1>Jon Jackson</h1>
-    <div class="description">
-      <p>Web developer crafting digital wonders.💻</p>
-      <p>Drummer, guitarist on occasion.🥁🎸</p>
-      <p>Pedaling through life on two wheels.🚲</p>
-    </div>
-    <button onclick="changeStyles()" class="btn btn-primary" id="changeStylesBtn">
-      Change Theme
-    </button>
-  </header>
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Hey there! I'm a full-stack developer who loves building web applications. These days, I'm working as a Technical
-      Consultant at <a href="https://www.perficient.com/" target="_blank" rel="noopener">Perficient</a>, where I
-      collaborate with incredible colleagues to build innovative solutions and tackle complex technical challenges.
-    </p>
-    <p>
-      Here's what I'm working with:
-    </p>
-    <p>
-      • Front End: JavaScript, TypeScript, React, Next.js, Angular, Vue<br>
-      • Back End: Node.js, Express, PostgreSQL, SQL<br>
-      • Testing: Selenium, Cypress, Jest<br>
-      • Cloud: Google Cloud Certified (Associate Cloud Engineer & Cloud Digital Leader), professional experience with
-      Azure
-    </p>
-    <p>
-      I'm based in Detroit, and when I'm not coding, you might find me <a href="https://www.youtube.com/@jonjackson5979"
-        target="_blank" rel="noopener">playing drums</a> or exploring the city on my bike. I'm always excited to take on
-      new challenges and create applications that make a difference.
-    </p>
-    <p>Want to know more? Check out my resume:</p>
-    <a href="./assets/Jon Jackson Resume 2025.pdf" rel="noopener" target="_blank">Download My Resume (PDF)</a>
-  </section>
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-flex-container">
-      <div class="project">
-        <div class="project-img-container">
-          <img src="assets\js-countup-two.gif" alt="Placeholder Image" class="project-pic" />
-        </div>
-        <h3>JavaScript Countup Animation</h3>
-        <p>A JavaScript function to display incrementing numbers.</p>
-        <p>
-          <a href="https://jon424.github.io/javascript-countup-animation/" target="_blank">Live demo</a>
-        </p>
-        <p>
-          <a href="https://github.com/jon424/javascript-countup-animation" target="_blank">GitHub</a>
-        </p>
-        <p>
-          <a href="https://www.npmjs.com/package/countup-animation" target="_blank">npm package</a>
-        </p>
+      #about {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2em 3em 2em;
+      }
 
-        <!-- Add more details about your project -->
+      #about p {
+        line-height: 1.6;
+        margin-bottom: 1.5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img
+        src="assets\github-profile-pic.jpg"
+        alt="Placeholder Image"
+        class="thumbnail" />
+      <h1>Jon Jackson</h1>
+      <div class="description">
+        <p>Web developer crafting digital wonders.💻</p>
+        <p>Drummer, guitarist on occasion.🥁🎸</p>
+        <p>Pedaling through life on two wheels.🚲</p>
       </div>
+      <button
+        onclick="changeStyles()"
+        class="btn btn-primary"
+        id="changeStylesBtn">
+        Change Theme
+      </button>
+    </header>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hey there! I'm a full-stack developer who loves building web
+        applications. These days, I'm working as a Technical Consultant at
+        <a href="https://www.perficient.com/" target="_blank" rel="noopener"
+          >Perficient</a
+        >, where I collaborate with incredible colleagues to build innovative
+        solutions and tackle complex technical challenges.
+      </p>
+      <p>Here's what I'm working with:</p>
+      <p>
+        • Front End: JavaScript, TypeScript, React, Next.js, Angular, Vue<br />
+        • Back End: Node.js, Express, PostgreSQL, SQL<br />
+        • Testing: Selenium, Cypress, Jest<br />
+        • Cloud: Google Cloud Certified (Associate Cloud Engineer & Cloud
+        Digital Leader), professional experience with Azure
+      </p>
+      <p>
+        I'm based in Detroit, and when I'm not coding, you might find me
+        <a
+          href="https://www.youtube.com/@jonjackson5979"
+          target="_blank"
+          rel="noopener"
+          >playing drums</a
+        >
+        or exploring the city on my bike. I'm always excited to take on new
+        challenges and create applications that make a difference.
+      </p>
+      <p>Want to know more? Check out my resume:</p>
+      <a
+        href="./assets/Jon Jackson Resume 2025.pdf"
+        rel="noopener"
+        target="_blank"
+        >Download My Resume (PDF)</a
+      >
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-flex-container">
+        <div class="project">
+          <div class="project-img-container">
+            <img
+              src="assets\js-countup-two.gif"
+              alt="Placeholder Image"
+              class="project-pic" />
+          </div>
+          <h3>JavaScript Countup Animation</h3>
+          <p>A JavaScript function to display incrementing numbers.</p>
+          <p>
+            <a
+              href="https://jon424.github.io/javascript-countup-animation/"
+              target="_blank"
+              >Live demo</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://github.com/jon424/javascript-countup-animation"
+              target="_blank"
+              >GitHub</a
+            >
+          </p>
+          <p>
+            <a
+              href="https://www.npmjs.com/package/countup-animation"
+              target="_blank"
+              >npm package</a
+            >
+          </p>
 
-      <div class="project">
-        <div class="project-img-container">
-          <img src="assets\mov-to-mp4.png" alt="MOV to MP4 Converter App" class="project-pic" />
+          <!-- Add more details about your project -->
         </div>
-        <h3>MOV to MP4 Converter</h3>
-        <p>A modern web application that converts .mov video files to .mp4 format with a beautiful, responsive user
-          interface. The app features real-time progress tracking, dynamic time-based theming, and smooth animations.
-        </p>
-        <p>
-          <a href="https://mov-to-mp4.vercel.app/" target="_blank">Live demo</a>
-        </p>
-        <p>
-          <a href="https://github.com/jon424/mov-to-mp4" target="_blank">GitHub</a>
-        </p>
+
+        <div class="project">
+          <div class="project-img-container">
+            <img
+              src="assets\mov-to-mp4.png"
+              alt="MOV to MP4 Converter App"
+              class="project-pic" />
+          </div>
+          <h3>MOV to MP4 Converter</h3>
+          <p>
+            A modern web application that converts .mov video files to .mp4
+            format with a beautiful, responsive user interface. The app features
+            real-time progress tracking, dynamic time-based theming, and smooth
+            animations.
+          </p>
+          <p>
+            <a href="https://mov-to-mp4.vercel.app/" target="_blank"
+              >Live demo</a
+            >
+          </p>
+          <p>
+            <a href="https://github.com/jon424/mov-to-mp4" target="_blank"
+              >GitHub</a
+            >
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>
-      Feel free to contact me for any inquiries or collaboration
-      opportunities.
-    </p>
-  </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>
+        Feel free to contact me for any inquiries or collaboration
+        opportunities. I can be reached by email at jonathanjackson424@gmail.com
+      </p>
+    </section>
 
-  <footer>
-    <!-- <a href="#about" onclick="smoothScroll('about')">About</a>
+    <footer>
+      <!-- <a href="#about" onclick="smoothScroll('about')">About</a>
     <a href="#projects" onclick="smoothScroll('projects')">Projects</a>
     <a href="#contact" onclick="smoothScroll('contact')">Contact</a> -->
-  </footer>
+    </footer>
 
-  <script defer>
-    // Define the changeStyles function with closure
-    const changeStyles = (() => {
-      // Suffixes for the styles
-      const suffixes = ["-two", "-three", "-four", "-one"];
+    <script defer>
+      // Define the changeStyles function with closure
+      const changeStyles = (() => {
+        // Suffixes for the styles
+        const suffixes = ["-two", "-three", "-four", "-one"];
 
-      // Initialize currentIndex outside the function
-      let currentIndex = 0;
+        // Initialize currentIndex outside the function
+        let currentIndex = 0;
 
-      // Function to get a sequential suffix
-      const getSequentialSuffix = () => {
-        if (currentIndex === suffixes.length) {
-          // If all suffixes have been used, reset the index
-          currentIndex = 0;
-        }
+        // Function to get a sequential suffix
+        const getSequentialSuffix = () => {
+          if (currentIndex === suffixes.length) {
+            // If all suffixes have been used, reset the index
+            currentIndex = 0;
+          }
 
-        // Get the current suffix
-        const currentSuffix = suffixes[currentIndex];
+          // Get the current suffix
+          const currentSuffix = suffixes[currentIndex];
 
-        // Increment the index for the next call
-        currentIndex++;
+          // Increment the index for the next call
+          currentIndex++;
 
-        return currentSuffix;
-      };
-
-      // Return the actual changeStyles function
-      return () => {
-        const sequentialSuffix = getSequentialSuffix();
-        console.log("Sequential Suffix:", sequentialSuffix);
-
-        // Update the properties for specific elements
-        const updateProperties = (element, property, variable, suffix) => {
-          const oldStyleOne = `--${variable}-one`;
-          const oldStyleTwo = `--${variable}-two`;
-          const oldStyleThree = `--${variable}-three`;
-          const oldStyleFour = `--${variable}-four`;
-          const newStyle = `--${variable}${suffix}`;
-
-          element.style.removeProperty(oldStyleOne);
-          element.style.removeProperty(oldStyleTwo);
-          element.style.removeProperty(oldStyleThree);
-          element.style.removeProperty(oldStyleFour);
-          element.style.setProperty(property, `var(${newStyle})`);
+          return currentSuffix;
         };
 
-        const headings = document.querySelectorAll("h1");
-        headings.forEach((heading) => {
+        // Return the actual changeStyles function
+        return () => {
+          const sequentialSuffix = getSequentialSuffix();
+          console.log("Sequential Suffix:", sequentialSuffix);
+
+          // Update the properties for specific elements
+          const updateProperties = (element, property, variable, suffix) => {
+            const oldStyleOne = `--${variable}-one`;
+            const oldStyleTwo = `--${variable}-two`;
+            const oldStyleThree = `--${variable}-three`;
+            const oldStyleFour = `--${variable}-four`;
+            const newStyle = `--${variable}${suffix}`;
+
+            element.style.removeProperty(oldStyleOne);
+            element.style.removeProperty(oldStyleTwo);
+            element.style.removeProperty(oldStyleThree);
+            element.style.removeProperty(oldStyleFour);
+            element.style.setProperty(property, `var(${newStyle})`);
+          };
+
+          const headings = document.querySelectorAll("h1");
+          headings.forEach((heading) => {
+            updateProperties(
+              heading,
+              "font-family",
+              "heading-font",
+              sequentialSuffix
+            );
+          });
+
+          const headingsTwo = document.querySelectorAll("h2");
+          headingsTwo.forEach((headingTwo) => {
+            updateProperties(
+              headingTwo,
+              "font-family",
+              "heading-font",
+              sequentialSuffix
+            );
+          });
+
+          const headingsThree = document.querySelectorAll("h3");
+          headingsThree.forEach((headingThree) => {
+            updateProperties(
+              headingThree,
+              "font-family",
+              "paragraph-font",
+              sequentialSuffix
+            );
+          });
+
+          const paragraphs = document.querySelectorAll("p");
+          paragraphs.forEach((paragraph) => {
+            updateProperties(
+              paragraph,
+              "font-family",
+              "paragraph-font",
+              sequentialSuffix
+            );
+          });
+
+          // Update the background-color of the body
+          const body = document.body;
           updateProperties(
-            heading,
+            body,
+            "background-color",
+            "primary-color",
+            sequentialSuffix
+          );
+
+          // Update header and footer elements
+          const header = document.querySelector("header");
+          const footer = document.querySelector("footer");
+
+          updateProperties(
+            header,
+            "background-color",
+            "secondary-color",
+            sequentialSuffix
+          );
+          updateProperties(header, "color", "tertiary-color", sequentialSuffix);
+
+          updateProperties(
+            footer,
+            "background-color",
+            "secondary-color",
+            sequentialSuffix
+          );
+          updateProperties(footer, "color", "tertiary-color", sequentialSuffix);
+
+          // Update #projects
+          const projects = document.getElementById("projects");
+          updateProperties(
+            projects,
+            "background-color",
+            "quaternary-color",
+            sequentialSuffix
+          );
+
+          // Update footer a
+          const footerLinks = document.querySelectorAll("footer a");
+          footerLinks.forEach((link) => {
+            updateProperties(link, "color", "quinary-color", sequentialSuffix);
+          });
+
+          // Update .project class
+          const projectElements = document.querySelectorAll(".project");
+          projectElements.forEach((project) => {
+            updateProperties(
+              project,
+              "border-color",
+              "quinary-color",
+              sequentialSuffix
+            );
+          });
+
+          // Update button
+          const changeThemeBtn = document.getElementById("changeStylesBtn");
+          updateProperties(
+            changeThemeBtn,
+            "background-color",
+            "primary-color",
+            sequentialSuffix
+          );
+          updateProperties(
+            changeThemeBtn,
             "font-family",
             "heading-font",
             sequentialSuffix
           );
-        });
 
-        const headingsTwo = document.querySelectorAll("h2");
-        headingsTwo.forEach((headingTwo) => {
-          updateProperties(
-            headingTwo,
-            "font-family",
-            "heading-font",
-            sequentialSuffix
-          );
-        });
+          // Trigger a reflow in the browser to apply the new styles
+          void document.body.offsetHeight;
+        };
+      })();
 
-        const headingsThree = document.querySelectorAll("h3");
-        headingsThree.forEach((headingThree) => {
-          updateProperties(
-            headingThree,
-            "font-family",
-            "paragraph-font",
-            sequentialSuffix
-          );
-        });
+      // links in footer scroll to their sections
+      function smoothScroll(targetId) {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const targetPosition = targetElement.offsetTop;
+          const startPosition = window.scrollY;
+          const distance = targetPosition - startPosition;
+          const duration = 290;
+          const startTime = performance.now();
 
-        const paragraphs = document.querySelectorAll("p");
-        paragraphs.forEach((paragraph) => {
-          updateProperties(
-            paragraph,
-            "font-family",
-            "paragraph-font",
-            sequentialSuffix
-          );
-        });
+          function scrollStep() {
+            const currentTime = performance.now();
+            const elapsed = currentTime - startTime;
 
-        // Update the background-color of the body
-        const body = document.body;
-        updateProperties(
-          body,
-          "background-color",
-          "primary-color",
-          sequentialSuffix
-        );
+            window.scrollTo(
+              0,
+              easeInOutCubic(elapsed, startPosition, distance, duration)
+            );
 
-        // Update header and footer elements
-        const header = document.querySelector("header");
-        const footer = document.querySelector("footer");
-
-        updateProperties(
-          header,
-          "background-color",
-          "secondary-color",
-          sequentialSuffix
-        );
-        updateProperties(header, "color", "tertiary-color", sequentialSuffix);
-
-        updateProperties(
-          footer,
-          "background-color",
-          "secondary-color",
-          sequentialSuffix
-        );
-        updateProperties(footer, "color", "tertiary-color", sequentialSuffix);
-
-        // Update #projects
-        const projects = document.getElementById("projects");
-        updateProperties(
-          projects,
-          "background-color",
-          "quaternary-color",
-          sequentialSuffix
-        );
-
-        // Update footer a
-        const footerLinks = document.querySelectorAll("footer a");
-        footerLinks.forEach((link) => {
-          updateProperties(link, "color", "quinary-color", sequentialSuffix);
-        });
-
-        // Update .project class
-        const projectElements = document.querySelectorAll(".project");
-        projectElements.forEach((project) => {
-          updateProperties(
-            project,
-            "border-color",
-            "quinary-color",
-            sequentialSuffix
-          );
-        });
-
-        // Update button
-        const changeThemeBtn = document.getElementById("changeStylesBtn");
-        updateProperties(
-          changeThemeBtn,
-          "background-color",
-          "primary-color",
-          sequentialSuffix
-        );
-        updateProperties(
-          changeThemeBtn,
-          "font-family",
-          "heading-font",
-          sequentialSuffix
-        );
-
-        // Trigger a reflow in the browser to apply the new styles
-        void document.body.offsetHeight;
-      };
-    })();
-
-    // links in footer scroll to their sections
-    function smoothScroll(targetId) {
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const targetPosition = targetElement.offsetTop;
-        const startPosition = window.scrollY;
-        const distance = targetPosition - startPosition;
-        const duration = 290;
-        const startTime = performance.now();
-
-        function scrollStep() {
-          const currentTime = performance.now();
-          const elapsed = currentTime - startTime;
-
-          window.scrollTo(
-            0,
-            easeInOutCubic(elapsed, startPosition, distance, duration)
-          );
-
-          if (elapsed < duration) {
-            requestAnimationFrame(scrollStep);
+            if (elapsed < duration) {
+              requestAnimationFrame(scrollStep);
+            }
           }
-        }
 
-        // Easing function for smoother scrolling
-        function easeInOutCubic(t, b, c, d) {
-          t /= d / 2;
-          if (t < 1) return (c / 2) * t * t * t + b;
-          t -= 2;
-          return (c / 2) * (t * t * t + 2) + b;
-        }
+          // Easing function for smoother scrolling
+          function easeInOutCubic(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return (c / 2) * t * t * t + b;
+            t -= 2;
+            return (c / 2) * (t * t * t + 2) + b;
+          }
 
-        requestAnimationFrame(scrollStep);
+          requestAnimationFrame(scrollStep);
+        }
       }
-    }
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>
