@@ -137,7 +137,10 @@
     }
 
     .projects-flex-container {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 300px);
+      gap: 5em;
+      justify-content: center;
     }
 
     footer a {
@@ -149,9 +152,10 @@
     .project {
       border: 1px solid var(--quinary-color-one);
       font-family: var(--paragraph-font-one);
-      margin: 1em;
       padding: 1em;
       text-align: center;
+      width: 100%;
+      max-width: 300px;
     }
 
     .project-img-container {
@@ -171,9 +175,11 @@
       z-index: 999;
     }
 
-    @media only screen and (max-width: 391px) {
+    @media only screen and (max-width: 800px) {
       .projects-flex-container {
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2em;
       }
 
       #changeStylesBtn {
@@ -230,12 +236,19 @@
       </div>
 
       <div class="project">
-        <h3>Project 2</h3>
-        <p>
-          Description of Project 2. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit.
+        <div class="project-img-container">
+          <img src="assets\mov-to-mp4.png" alt="MOV to MP4 Converter App" class="project-pic" />
+        </div>
+        <h3>MOV to MP4 Converter</h3>
+        <p>A modern web application that converts .mov video files to .mp4 format with a beautiful, responsive user
+          interface. The app features real-time progress tracking, dynamic time-based theming, and smooth animations.
         </p>
-        <!-- Add more details about your project -->
+        <p>
+          <a href="https://mov-to-mp4.vercel.app/" target="_blank">Live demo</a>
+        </p>
+        <p>
+          <a href="https://github.com/jon424/mov-to-mp4" target="_blank">GitHub</a>
+        </p>
       </div>
     </div>
   </section>
